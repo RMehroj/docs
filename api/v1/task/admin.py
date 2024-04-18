@@ -1,3 +1,12 @@
 from django.contrib import admin
+from api.v1.task import models
 
-# Register your models here.
+@admin.register(models.File)
+class FileAdmin(admin.ModelAdmin):
+
+    list_display = [
+        'name',
+        'file',
+        'group',
+    ]
+
